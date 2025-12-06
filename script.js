@@ -6,7 +6,7 @@ async function fetchWeather() {
   const weatherDataSection = document.getElementById("weather-data");
   weatherDataSection.style.display = "block";
   
-  // 🚨 Put your actual OpenWeather API key here:
+  // Put your actual OpenWeather API key here:
   const apiKey = "fb48f08808fff16a4b9063570f8d109a";
 
   // If the input is empty, show a message and stop
@@ -20,7 +20,7 @@ async function fetchWeather() {
     return;
   }
 
-  // ---------- Inner function 1: Get longitude and latitude ----------
+  
   async function getLonAndLat() {
     const countryCode = "IN"; // As used in the tutorial
     const geocodeURL = `https://api.openweathermap.org/geo/1.0/direct?q=${searchInput.replace(" ", "%20")},${countryCode}&limit=1&appid=${apiKey}`;
@@ -47,7 +47,7 @@ async function fetchWeather() {
     }
   }
 
-  // ---------- Inner function 2: Get weather data using lon & lat ----------
+
   async function getWeatherData(lon, lat) {
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
